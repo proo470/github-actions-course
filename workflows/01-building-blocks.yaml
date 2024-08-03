@@ -5,20 +5,14 @@ jobs:
   echo-hello:
       runs-on: ubuntu-latest
       steps:
-        - run: echo "Hell of world"
-
-
-on: workflow_dispatch
-
-jobs:
+        - name: Say Hello
+          run: echo "Hell of world"
   echo-goodbye:
       runs-on: ubuntu-latest
       steps:
         - name: Failed Step
-        - run: |
-            echo "I"
-            echo "will"
-            echo "fail"
-        
+          run: |
+            echo "I Will Fail"
+            exit 1
         - name: Say Goodbye
-        - run: echo "Goodbye world"
+          run: echo "Goodbye world"
