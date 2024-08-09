@@ -1,7 +1,7 @@
 name: 03 - Workflow Runners
 on: 
     #push:
-    pull_request:
+    #pull_request:
     #schedule:
       #- cron: '*/5 * * * *'
     workflow_dispatch:
