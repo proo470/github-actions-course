@@ -1,0 +1,6 @@
+name: My NPM package workflow
+on:
+pull_request:
+types: [opened, synchronize]
+branches:
+- main
