@@ -1,9 +1,8 @@
 name: 07 - Expressions
-# This allows us to use the debug input for default on push as well
 run-name: 07 - Expressions | DEBUG - ${{ inputs.debug && 'ON ' || 'OFF' }}
 
 on: 
-    push:
+    #push:
     workflow_dispatch:
         inputs:
             debug:
