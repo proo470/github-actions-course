@@ -1,5 +1,5 @@
 name: 10 - Controlling the Execution Flow
-#run-name: 10 - Controlling the Execution Flow | Pass-Unit-Tests - ${{ inputs.pass-units-tests }}
+
 on: 
     #push:
     workflow_dispatch:
@@ -17,10 +17,12 @@ jobs:
               run: echo "Linting and building project"
     unit-tests:
         runs-on: ubuntu-latest
+        #continue-on-error: true #This will allow the workflow to continue even if this job fails when uncommented
         steps:
             - name: Running unit tests
               run: echo "Running unit tests"
             - name: Failing tests
+              #Can also use IF at this level to condition the run
               run: |
                 if [ ${{ inputs.pass-units-tests }} = false ]; then
                     echo "Failing tests"
