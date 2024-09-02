@@ -30,6 +30,7 @@ jobs:
                   cat "$GITHUB_OUTPUT"
                   #echo "mistake=true" >> "$GITHUB_OUTPUT"
                   #cat "$GITHUB_OUTPUT"
+            #Scope of the mistake is limited as it is in a different step and it does not affect the deploy
             - name: Step with mistake
               run: |
                   echo "mistake=true" >> "$GITHUB_OUTPUT"
