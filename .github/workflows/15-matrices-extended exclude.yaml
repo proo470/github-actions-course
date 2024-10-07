@@ -47,7 +47,19 @@ jobs:
                     - opacity: 50
                     - color: red
                       shape: triangle
-                      size: medium          
+                      size: medium    
+                    - color: green
+                      shape: circle
+                      size: large
+                      opacity: 75
+                    - color: green
+                      shape: circle
+                      size: large
+                      opacity: 25
+                exclude: # Always processed before the include
+                    #- opacity: 75      
+                     - color: green
+                       shape: circle
         steps:
             - name: Setup Node.js
-              run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}"
+              run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}"
