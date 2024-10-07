@@ -12,7 +12,7 @@ jobs:
             matrix:
                 node-version: [18.x, 20.x, 21.x]
                 os: [ubuntu-latest, windows-latest]
-                include:
+                include: #For additions or exceptions to the matrix
                     - node-version: 16.x # This will be added to the versions applied but only to ubuntu
                       os: ubuntu-latest
                     - node-version: 21.x # This will be added to the versions applied but only to ubuntu
@@ -25,8 +25,8 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Fail if experimental
-              if: matrix.tag == 'experimental'
+            - name: Fail if experimental #exit if the tag is experimental
+              if: matrix.tag == 'experimental' 
               run: exit 1
             - name: Perform some tests
               run: |
