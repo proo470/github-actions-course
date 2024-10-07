@@ -46,7 +46,8 @@ jobs:
                 include:
                     - opacity: 50
                     - color: red
-                      shape: triangle              
+                      shape: triangle
+                      size: medium          
         steps:
             - name: Setup Node.js
               run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}"
